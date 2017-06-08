@@ -1,0 +1,19 @@
+<h1><%= @forecast["title"] %></h1>
+
+<h3>Current Temp: <%= @forecast["condition"]["temp"] %></h3>
+
+<% @forecast["forecast"][0..5].each do |forecast| %>
+
+<p>Date: <%= forecast["date"] %> </p>
+<p>High: <%= forecast["high"] %> </p>
+<p>Low: <%= forecast["low"] %> </p>
+<p><%= forecast["text"] %> </p>
+<br>
+
+<% end %>
+
+<%= form_tag "/index", method: :post do %>
+</p>  <p>city:<input type="text" name="city">
+</p>  <p>state:<input type="text" name="state">
+<p><input type="submit" value="go"></p>
+<% end %>
